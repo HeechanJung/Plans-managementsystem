@@ -17,25 +17,68 @@ public class Plansmanager {
 			System.out.println("6.Exit");
 			System.out.println("Select one number between 1-6 ");
 			num=input.nextInt();
-			
 			if (num==1) {
-				System.out.print("Year plans");
-				int Yearplans=input.nextInt();
-				System.out.print("Month plans");
-				String Monthplans=input.next();
-				
+				addPlans();
 			}
-			
-
-
-
-			
+			else if (num==2) {
+				deletePlans();
+			}
+			else if (num==3) {
+				editPlans();
+				}
+			else if (num==4) {
+				viewPlans();
+			}
+			else {
+				continue;
+			}
 		}
-		
-		
-		
-		// TODO Auto-generated method stub
+			
+	}
+	public static void addPlans() {
+		Scanner input=new Scanner(System.in);
+		System.out.print("Year Plan: ");
+		String yearplan=input.nextLine();
+		System.out.println("Month Plan: ");
+		String monthplan=input.nextLine();
+		System.out.println("Week Plan: ");
+		String weekplan=input.nextLine();
+		System.out.println("Daily Plan: ");
+		String dailyplan=input.nextLine();
 
 	}
+	public static void deletePlans() {
+		Scanner input=new Scanner(System.in);
+		System.out.print("Year Plan: ");
+		String yearplan=input.nextLine();
+		System.out.println("Month Plan: ");
+		String monthplan=input.nextLine();
+		System.out.println("Week Plan: ");
+		String weekplan=input.nextLine();
+		System.out.println("Daily Plan: ");
+		String dailyplan=input.nextLine();
 
 }
+	public static void editPlans() {
+		Scanner input=new Scanner(System.in);
+		System.out.print("Year Plan: ");
+		String yearplan=input.nextLine();
+		System.out.println("Month Plan: ");
+		String monthplan=input.nextLine();
+		System.out.println("Week Plan: ");
+		String weekplan=input.nextLine();
+		System.out.println("Daily Plan: ");
+		String dailyplan=input.nextLine();
+	
+	}
+	public static void viewPlans() { Scanner input=new Scanner(System.in);
+	System.out.print("Year Plan: ");
+	String yearplan=input.nextLine();
+	System.out.println("Month Plan: ");
+	String monthplan=input.nextLine();
+	System.out.println("Week Plan: ");
+	String weekplan=input.nextLine();
+	System.out.println("Daily Plan: ");
+	String dailyplan=input.nextLine();1
+	}
+	}
