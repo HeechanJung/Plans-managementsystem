@@ -3,31 +3,30 @@ import java.util.Scanner;
 public class Plansmanager {
 
 	public static void main(String[] args) {
-		int num=0;
-		System.out.println("Input :");
-		Scanner input=new Scanner(System.in);
-	
+		Scanner input= new Scanner(System.in);
+		Plannermanagement plannermanagement=new Plannermanagement(input);
 		
-		while (num !=6) {
+		int num=0;
+		
+		while (num !=5) {
 			System.out.println("1.Add Plans");
 			System.out.println("2.Delete Plans");
 			System.out.println("3.Edit Plans");
 			System.out.println("4.View Plans");
-			System.out.println("5.Show Plans");
-			System.out.println("6.Exit");
-			System.out.println("Select one number between 1-6 ");
+			System.out.println("5.Exit");
+			System.out.println("Select one number between 1-5 ");
 			num=input.nextInt();
 			if (num==1) {
-				addPlans();
+				plannermanagement.addPlans();
 			}
 			else if (num==2) {
-				deletePlans();
+				plannermanagement.deletePlans();
 			}
 			else if (num==3) {
-				editPlans();
+				plannermanagement.editPlans();
 				}
 			else if (num==4) {
-				viewPlans();
+				plannermanagement.viewPlans();
 			}
 			else {
 				continue;
@@ -35,50 +34,7 @@ public class Plansmanager {
 		}
 			
 	}
-	public static void addPlans() {
-		Scanner input=new Scanner(System.in);
-		System.out.print("Year Plan: ");
-		String yearplan=input.nextLine();
-		System.out.println("Month Plan: ");
-		String monthplan=input.nextLine();
-		System.out.println("Week Plan: ");
-		String weekplan=input.nextLine();
-		System.out.println("Daily Plan: ");
-		String dailyplan=input.nextLine();
 
-	}
-	public static void deletePlans() {
-		Scanner input=new Scanner(System.in);
-		System.out.print("Year Plan: ");
-		String yearplan=input.nextLine();
-		System.out.println("Month Plan: ");
-		String monthplan=input.nextLine();
-		System.out.println("Week Plan: ");
-		String weekplan=input.nextLine();
-		System.out.println("Daily Plan: ");
-		String dailyplan=input.nextLine();
-
-}
-	public static void editPlans() {
-		Scanner input=new Scanner(System.in);
-		System.out.print("Year Plan: ");
-		String yearplan=input.nextLine();
-		System.out.println("Month Plan: ");
-		String monthplan=input.nextLine();
-		System.out.println("Week Plan: ");
-		String weekplan=input.nextLine();
-		System.out.println("Daily Plan: ");
-		String dailyplan=input.nextLine();
+ 
 	
-	}
-	public static void viewPlans() { Scanner input=new Scanner(System.in);
-	System.out.print("Year Plan: ");
-	String yearplan=input.nextLine();
-	System.out.println("Month Plan: ");
-	String monthplan=input.nextLine();
-	System.out.println("Week Plan: ");
-	String weekplan=input.nextLine();
-	System.out.println("Daily Plan: ");
-	String dailyplan=input.nextLine();1
-	}
 	}
