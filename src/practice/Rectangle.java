@@ -1,6 +1,6 @@
 package practice;
 
-public class Rectangle extends Shape  {
+public class Rectangle implements Shape  {
 	int width;
 	int height;
 	public Rectangle(int i, int j) {
