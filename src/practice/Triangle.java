@@ -1,6 +1,6 @@
 package practice;
 
-public class Triangle implements Shape{
+public class Triangle extends Shape{
 	int width;
 	int height;
 	public Triangle(int i, int j) {
