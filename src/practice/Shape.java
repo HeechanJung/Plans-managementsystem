@@ -1,9 +1,6 @@
 package practice;
 
-abstract public class Shape {
-	private double size;
-
-	
+public interface Shape {
 	
 	public abstract void getArea();
 		

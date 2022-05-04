@@ -1,6 +1,6 @@
 package practice;
 
-public class Circle extends Shape {
+public class Circle implements Shape {
 	int radius;
 	public Circle(int i) {
 		this.radius=i;
