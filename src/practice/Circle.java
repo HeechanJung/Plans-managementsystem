@@ -13,7 +13,7 @@ public class Circle implements Shape {
 		
 		double pi=3.14;
 		double area=radius*radius*pi;
-		System.out.println("¿øÀÇ Å©±â: "+area);
+		System.out.println("ì›ì˜ í¬ê¸°: "+area);
 		
 	}
 

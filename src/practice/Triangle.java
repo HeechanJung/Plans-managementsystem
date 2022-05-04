@@ -12,7 +12,8 @@ public class Triangle implements Shape{
 	public void getArea() {
 		
 		int area=width*height/2;
-		System.out.println("»ï°¢ÇüÀÇ Å©±â: "+area);
+		
+		System.out.println("ì‚¼ê°í˜•ì˜ í¬ê¸°: "+area);
 		
 	}
 
