@@ -11,8 +11,8 @@ public class Rectangle implements Shape  {
 	public void getArea() {
 	
 		int area=width*height;
-		System.out.println("�簢���� ũ��: "+area);
-		
+		System.out.println("사각형의 크기: "+area);
+		System.out.println("사각형의 크기: "+area);
 	}
 
 	
