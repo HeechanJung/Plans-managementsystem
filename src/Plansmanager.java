@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class Plansmanager {
@@ -16,6 +17,7 @@ public class Plansmanager {
 			System.out.println("5.Exit");
 			System.out.println("Select one number between 1-5 ");
 			num=input.nextInt();
+			input.nextLine();
 			if (num==1) {
 				plannermanagement.addPlans();
 			}
