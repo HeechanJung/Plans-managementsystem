@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Exam extends Planner {
+public class Exam extends Planner implements Plannerinput {
 	public Exam(PlanKind kind) {
 		super(kind);
 	}
@@ -42,4 +42,24 @@ public class Exam extends Planner {
 	}
 
 }
+	public void printInfo() {
+		String skind = "none";
+		switch(this.kind) {
+		case Hobby:
+			skind = "hobby";
+			break;
+		case Exam:	
+			skind = "exam";
+			break;
+		case Promission:
+			skind= "promission";
+			break;
+		case Everyday:
+			skind= "everyday";
+		default:	
+		}
+		
+		System.out.println("kind:"+skind+"yearplan:"+yearplan+"Monthplan"+Monthplan+"weekplan"+weekplan+"dailyplan"+dailyplan);
+		
+	}
 }

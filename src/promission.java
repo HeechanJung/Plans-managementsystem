@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class promission extends Planner {
+public class promission extends Planner implements Plannerinput {
 	
 	public promission(PlanKind kind) {
 		super(kind);

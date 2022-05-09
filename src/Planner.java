@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Planner {
+public abstract class Planner {
 	protected PlanKind kind=PlanKind.Everyday;
 	public PlanKind getKind() {
 		return kind;
@@ -39,26 +39,7 @@ public class Planner {
 	 
 	
 	
-	public void printInfo() {
-		String skind = "none";
-		switch(this.kind) {
-		case Hobby:
-			skind = "hobby";
-			break;
-		case Exam:	
-			skind = "exam";
-			break;
-		case Promission:
-			skind= "promission";
-			break;
-		case Everyday:
-			skind= "everyday";
-		default:	
-		}
-		
-		System.out.println("kind:"+skind+"yearplan:"+yearplan+"Monthplan"+Monthplan+"weekplan"+weekplan+"dailyplan"+dailyplan);
-		
-	}
+	public abstract void printInfo();
 
 	public String getPlannerid() {
 		return plannerid;
@@ -100,23 +81,7 @@ public class Planner {
 		this.dailyplan = dailyplan;
 	}
 
-	public void getUserInput(Scanner input) {
-		System.out.print("Year Plan: ");
-		String yearplan=input.next();
-		this.setYearplan(yearplan);
-		
-		System.out.print("Month Plan: ");
-		String Monthplan=input.next();
-		this.setMonthplan(Monthplan);
-		
-		System.out.print("Week Plan: ");
-		String weekplan=input.next();
-		this.setWeekplan(weekplan);
-		
-		System.out.print("Daily Plan: ");
-		String dailyplan=input.next();
-		this.setDailyplan(dailyplan);
-	}
+	
 
 
 	

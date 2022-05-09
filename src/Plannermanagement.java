@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Plannermanagement {
-	ArrayList<Planner> list= new ArrayList<Planner>();
+	ArrayList<Plannerinput> list= new ArrayList<Plannerinput>();
 	
 	Planner planner;
 	Scanner input;
@@ -12,35 +12,36 @@ public class Plannermanagement {
 	public void addPlans() {
 		
 		int kind=0;
+		Plannerinput Plannerinput;
 		while (kind !=1 && kind !=2 ) {
-			System.out.print("1 for Hobby");
+			System.out.print("1 for Everyday");
 			System.out.print("2 for Exam");
 			System.out.print("3 for Promission");
 			System.out.print("Select num for Plan Kind between 1 and 2:");
 			kind=input.nextInt();
 			if(kind==1) {
-				planner =new Planner(PlanKind.Hobby);
-				planner.getUserInput(input);
-				list.add(planner);
+				Plannerinput =new Everyday(PlanKind.Everyday);
+				Plannerinput.getUserInput(input);
+				list.add(Plannerinput);
 				break;
 			}
 			else if(kind==2) {
-				planner =new Exam(PlanKind.Exam);
-				planner.getUserInput(input);
-				list.add(planner);
+				Plannerinput =new Exam(PlanKind.Exam);
+				Plannerinput.getUserInput(input);
+				list.add(Plannerinput);
 				break;
 			}
 			else if(kind==3) {
-				planner =new promission(PlanKind.Promission);
-				planner.getUserInput(input);
-				list.add(planner);
+				Plannerinput =new promission(PlanKind.Promission);
+				Plannerinput.getUserInput(input);
+				list.add(Plannerinput);
 				break;
 			}
 			else {
 				System.out.println("Select num for Plan Kind between 1 and 2:");
 			}
 		}
-		Planner planner =new Planner();
+		//Planner planner = new Planner();
 	System.out.print("Year Plan: ");
 	planner.yearplan=input.next();
 	System.out.print("Month Plan: ");
@@ -50,7 +51,7 @@ public class Plannermanagement {
 	System.out.print("Daily Plan: ");
 	planner.dailyplan=input.next();
 	planner.printInfo();
-	list.add(planner);
+	list.add((Plannerinput) planner);
 	System.out.println(list.size());
 	
 }
@@ -61,7 +62,7 @@ public void deletePlans() {
 	String yearplan=input.next();
 	int index=-1;
 	for(int i=0;i<list.size();i++) {
-		if(list.get(i).yearplan==yearplan) {
+		if(list.get(i).getYearplan()==yearplan) {
 			index=i;
 			break;		}
 		}
@@ -80,7 +81,7 @@ public void editPlans() {
 	System.out.print("Year Plan: ");
 	String yearplan=input.next();
 	for(int i=0;i<list.size(); i++) {
-		Planner planner=list.get(i);
+		Plannerinput plannerinput=list.get(i);
 	
 	if(planner.yearplan==yearplan) {
 		int num=-1;
@@ -120,7 +121,7 @@ public void viewPlans() {
 System.out.print("Year Plan: ");
 String yearplan=input.next();
 for(int i=0;i<list.size(); i++) {
-	yearplan =list.get(i).yearplan;
+	yearplan =list.get(i).getYearplan();
 	if(yearplan.equals(yearplan)) {
 		list.get(i).printInfo();
 		break;
