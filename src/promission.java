@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import Exception.WeekException;
+
 public class promission extends Planner implements Plannerinput {
 	
 	public promission(PlanKind kind) {
@@ -13,7 +15,7 @@ public class promission extends Planner implements Plannerinput {
 		String yearplan=input.next();
 		this.setYearplan(yearplan);
 		
-
+		public void setplannerdailywithYN(Scanner input) {
 		char answer='x';
 		while(answer != 'y' && answer !='Y' && answer !='n' && answer !='N')
 		{
@@ -37,19 +39,25 @@ public class promission extends Planner implements Plannerinput {
 		{
 			System.out.print("Do you have an travel plan? (Y/N)");
 			answer=input.next().charAt(0);
-			if(answer=='y'||answer=='Y') {
-				System.out.print("Travel Plan:");
-				String dailyplan=input.next();
-				this.setDailyplan(dailyplan);
-				break;
+			try {
+				if(answer=='y'||answer=='Y') {
+					System.out.print("Travel Plan:");
+					String dailyplan=input.next();
+					this.setDailyplan(dailyplan);
+					break;
+				}
+				else if (answer=='n'||answer=='N') {
+					this.setDailyplan(dailyplan);
+					break;
+				}
+				else {
 			}
-			else if (answer=='n'||answer=='N') {
-				this.setDailyplan(dailyplan);
-				break;
-			}
-			else {
-		}
 	}
+		
+		catch (WeekException e) {
+			System.out.println("Incorrect Week plan. Put the weekplan that contains p or CH");
+		}
+		}
 		
 		System.out.print("Month Plan: ");
 		String Monthplan=input.next();
@@ -57,13 +65,19 @@ public class promission extends Planner implements Plannerinput {
 		
 		System.out.print("Week Plan: ");
 		String weekplan=input.next();
-		this.setWeekplan(weekplan);
+		try {
+			this.setWeekplan(weekplan);
+		} catch (WeekException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		System.out.print("Daily Plan: ");
 		String dailyplan=input.next();
 		this.setDailyplan(dailyplan);		
 
-}
+
+		}
 	public void printInfo() {
 		String skind = "none";
 		switch(this.kind) {

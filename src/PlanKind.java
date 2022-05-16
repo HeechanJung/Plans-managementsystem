@@ -1,9 +1,10 @@
 
 public enum PlanKind{
-	Hobby,
+	Everyday,
 	Exam,
 	Promission,
-	Everyday
+	Hobby
+	
 	
 	
 

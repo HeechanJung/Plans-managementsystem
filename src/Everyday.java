@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import Exception.WeekException;
+
 public class Everyday extends Planner implements Plannerinput {
 	public Everyday(PlanKind kind) {
 		super(kind);
@@ -14,9 +16,20 @@ public class Everyday extends Planner implements Plannerinput {
 		String Monthplan=input.next();
 		this.setMonthplan(Monthplan);
 		
-		System.out.println("Week Plan: ");
-		String weekplan=input.next();
-		this.setWeekplan(weekplan);
+		
+		String weekplan="";
+		while(!weekplan.contains("p")) {
+			System.out.println("Week plan: ");
+			weekplan=input.next();
+		
+		try {
+			this.setWeekplan(weekplan);
+		} catch (WeekException e) {
+			System.out.println("Incorrect Week plan. Put the weekplan that contains p or CH");
+		}
+		}
+		
+	
 		
 		System.out.println("Daily Plan: ");
 		String dailyplan=input.next();

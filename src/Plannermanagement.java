@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Plannermanagement {
@@ -13,11 +14,12 @@ public class Plannermanagement {
 		
 		int kind=0;
 		Plannerinput Plannerinput;
-		while (kind !=1 && kind !=2 ) {
-			System.out.print("1 for Everyday");
-			System.out.print("2 for Exam");
-			System.out.print("3 for Promission");
-			System.out.print("Select num for Plan Kind between 1 and 2:");
+		while (kind <1 || kind >3 ) {
+			try {
+			System.out.println("1 for Everyday");
+			System.out.println("2 for Exam");
+			System.out.println("3 for Promission");
+			System.out.print("Select num for 1, 2, or 3 for Plan Kind:");
 			kind=input.nextInt();
 			if(kind==1) {
 				Plannerinput =new Everyday(PlanKind.Everyday);
@@ -39,6 +41,14 @@ public class Plannermanagement {
 			}
 			else {
 				System.out.println("Select num for Plan Kind between 1 and 2:");
+			}
+			}
+			catch(InputMismatchException e) {
+				System.out.println("Please put an integer between 1 and 3!");
+				if(input.hasNext()) {
+					input.next();
+				}
+				kind=-1;
 			}
 		}
 		//Planner planner = new Planner();

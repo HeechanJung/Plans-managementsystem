@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import Exception.WeekException;
+
 public abstract class Planner {
 	protected PlanKind kind=PlanKind.Everyday;
 	public PlanKind getKind() {
@@ -69,7 +71,10 @@ public abstract class Planner {
 		return weekplan;
 	}
 
-	public void setWeekplan(String weekplan) {
+	public void setWeekplan(String weekplan) throws WeekException {
+		if(!weekplan.contains("p")){
+		throw new WeekException();
+		}
 		this.weekplan = weekplan;
 	}
 
@@ -80,8 +85,39 @@ public abstract class Planner {
 	public void setDailyplan(String dailyplan) {
 		this.dailyplan = dailyplan;
 	}
-
 	
+	public void setPlanneryear(Scanner input) {
+		System.out.println("Year plan: ");
+			String year=input.nextLine();
+		this.setYearplan(year);
+	}
+	
+	public void setPlannermonth(Scanner input) {
+		System.out.println("Month plan: ");
+			String month=input.nextLine();
+			this.setMonthplan(month);
+	}
+
+	public void setPlannnerweek(Scanner input) {
+		
+		String weekplan="";
+		while(!(weekplan.contains("p")&&weekplan.contains(""))) {
+			System.out.println("Week plan: ");
+			weekplan=input.next();
+		
+		try {
+			this.setWeekplan(weekplan);
+		} catch (WeekException e) {
+			System.out.println("Incorrect Week plan. Put the weekplan that contains p or CH");
+		}
+		}
+	}
+	public void setPlannerdaily(Scanner input) {
+		System.out.println("Daily plan: ");
+			String daily=input.nextLine();
+			this.setDailyplan(daily);
+	}
+
 
 
 	

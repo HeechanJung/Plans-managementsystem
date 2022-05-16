@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import Exception.WeekException;
+
 public class Exam extends Planner implements Plannerinput {
 	public Exam(PlanKind kind) {
 		super(kind);
@@ -21,25 +23,30 @@ public class Exam extends Planner implements Plannerinput {
 //		System.out.print("Daily Plan: ");
 //		String dailyplan=input.next();
 //		this.setDailyplan(dailyplan);
-//		
+		public void setPlannerdailywithYN(Scanner input) {
 		char answer='x';
 		while(answer != 'y' && answer !='Y' && answer !='n' && answer !='N')
 		{
 			System.out.print("Do you have an daily plan? (Y/N)");
 			answer=input.next().charAt(0);
-			if(answer=='y'||answer=='Y') {
-				System.out.print("Daily Plan:");
-				String dailyplan=input.next();
-				this.setDailyplan(dailyplan);
-				break;
+			try {
+				if(answer=='y'||answer=='Y') {
+					System.out.print("Daily Plan:");
+					String dailyplan=input.next();
+					this.setDailyplan(dailyplan);
+					break;
+				}
+				else if (answer=='n'||answer=='N') {
+					this.setDailyplan(dailyplan);
+					break;
+				}
+				else {
 			}
-			else if (answer=='n'||answer=='N') {
-				this.setDailyplan(dailyplan);
-				break;
-			}
-			else {
-		}
 	}
+			catch (WeekException e) {
+				System.out.println("Incorrect Week plan. Put the weekplan that contains p or CH");
+			}
+		}
 
 }
 	public void printInfo() {
