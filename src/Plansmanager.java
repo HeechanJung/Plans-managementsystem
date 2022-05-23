@@ -2,7 +2,11 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import log.Eventlogger;
+
 public class Plansmanager {
+	static Eventlogger logger= new Eventlogger("log.txt");
+
 
 	public static void main(String[] args) {
 		Scanner input= new Scanner(System.in);
@@ -21,15 +25,22 @@ public class Plansmanager {
 			//input.nextLine();
 			if (num==1) {
 				plannermanagement.addPlans();
+				logger.log("add plans");
 			}
 			else if (num==2) {
 				plannermanagement.deletePlans();
+				logger.log("delete plans");
+
 			}
 			else if (num==3) {
 				plannermanagement.editPlans();
+				logger.log("edit plans");
+
 				}
 			else if (num==4) {
 				plannermanagement.viewPlans();
+				logger.log("view a list of plan");
+
 			}
 			else {
 				continue;
