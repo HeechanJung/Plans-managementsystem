@@ -25,7 +25,7 @@ public class Everyday extends Planner implements Plannerinput {
 		try {
 			this.setWeekplan(weekplan);
 		} catch (WeekException e) {
-			System.out.println("Incorrect Week plan. Put the weekplan that contains p or CH");
+			System.out.println("Incorrect Week plan. Put the weekplan that contains p");
 		}
 		}
 		
@@ -52,7 +52,7 @@ public class Everyday extends Planner implements Plannerinput {
 		default:	
 		}
 		
-		System.out.println("kind:"+skind+"yearplan:"+yearplan+"Monthplan"+Monthplan+"weekplan"+weekplan+"dailyplan"+dailyplan);
+		System.out.println("kind:"+skind+" yearplan: "+yearplan+" Monthplan: "+Monthplan+" weekplan: "+weekplan+" dailyplan: "+dailyplan);
 		
 	}
 

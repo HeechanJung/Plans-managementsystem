@@ -18,8 +18,13 @@ public class Exam extends Planner implements Plannerinput {
 		
 		System.out.print("Week Plan: ");
 		String weekplan=input.next();
-		this.setWeekplan(weekplan);
-		
+		try {
+			this.setWeekplan(weekplan);
+		} catch (WeekException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Incorrect Week plan. Put the weekplan that contains p");
+		}
+	}
 //		System.out.print("Daily Plan: ");
 //		String dailyplan=input.next();
 //		this.setDailyplan(dailyplan);
@@ -29,7 +34,7 @@ public class Exam extends Planner implements Plannerinput {
 		{
 			System.out.print("Do you have an daily plan? (Y/N)");
 			answer=input.next().charAt(0);
-			try {
+		
 				if(answer=='y'||answer=='Y') {
 					System.out.print("Daily Plan:");
 					String dailyplan=input.next();
@@ -42,13 +47,10 @@ public class Exam extends Planner implements Plannerinput {
 				}
 				else {
 			}
-	}
-			catch (WeekException e) {
-				System.out.println("Incorrect Week plan. Put the weekplan that contains p or CH");
-			}
 		}
 
 }
+	
 	public void printInfo() {
 		String skind = "none";
 		switch(this.kind) {
@@ -66,7 +68,7 @@ public class Exam extends Planner implements Plannerinput {
 		default:	
 		}
 		
-		System.out.println("kind:"+skind+"yearplan:"+yearplan+"Monthplan"+Monthplan+"weekplan"+weekplan+"dailyplan"+dailyplan);
+		System.out.println("kind: "+skind+"yearplan: "+yearplan+"Monthplan: "+Monthplan+"weekplan: "+weekplan+"dailyplan: "+dailyplan);
 		
 	}
 }

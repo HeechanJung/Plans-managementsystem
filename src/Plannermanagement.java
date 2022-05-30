@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import Exception.WeekException;
+
 public class Plannermanagement {
 	ArrayList<Plannerinput> list= new ArrayList<Plannerinput>();
 	
@@ -13,7 +15,7 @@ public class Plannermanagement {
 	public void addPlans() {
 		
 		int kind=0;
-		Plannerinput Plannerinput;
+		Plannerinput Plannerinput = null;
 		while (kind <1 || kind >3 ) {
 			try {
 			System.out.println("1 for Everyday");
@@ -52,18 +54,23 @@ public class Plannermanagement {
 			}
 		}
 		//Planner planner = new Planner();
-	System.out.print("Year Plan: ");
-	planner.yearplan=input.next();
-	System.out.print("Month Plan: ");
-	planner.Monthplan=input.next();
-	System.out.print("Week Plan: ");
-	planner.weekplan=input.next();
-	System.out.print("Daily Plan: ");
-	planner.dailyplan=input.next();
-	planner.printInfo();
-	list.add((Plannerinput) planner);
-	System.out.println(list.size());
-	
+//	System.out.print("Year Plan: ");
+//	
+//	Plannerinput.setYearplan(input.next());
+//	System.out.print("Month Plan: ");
+//	Plannerinput.setMonthplan(input.next());
+//	System.out.print("Week Plan: ");
+//	try {
+//		Plannerinput.setWeekplan(input.next());
+//	} catch (WeekException e) {
+//		System.out.println("Incorrect Week plan. Put the weekplan that contains p");
+//	}
+//	System.out.print("Daily Plan: ");
+//	Plannerinput.setDailyplan(input.next());
+//	Plannerinput.printInfo();
+//	list.add((Plannerinput) planner);
+//	System.out.println(list.size());
+		Plannerinput.printInfo();
 }
 
 public void deletePlans() {

@@ -14,7 +14,7 @@ public class promission extends Planner implements Plannerinput {
 		System.out.print("Year Plan: ");
 		String yearplan=input.next();
 		this.setYearplan(yearplan);
-		
+	}
 		public void setplannerdailywithYN(Scanner input) {
 		char answer='x';
 		while(answer != 'y' && answer !='Y' && answer !='n' && answer !='N')
@@ -39,24 +39,18 @@ public class promission extends Planner implements Plannerinput {
 		{
 			System.out.print("Do you have an travel plan? (Y/N)");
 			answer=input.next().charAt(0);
-			try {
-				if(answer=='y'||answer=='Y') {
-					System.out.print("Travel Plan:");
-					String dailyplan=input.next();
-					this.setDailyplan(dailyplan);
-					break;
-				}
-				else if (answer=='n'||answer=='N') {
-					this.setDailyplan(dailyplan);
-					break;
-				}
-				else {
+			if(answer=='y'||answer=='Y') {
+				System.out.print("Travel Plan:");
+				String dailyplan=input.next();
+				this.setDailyplan(dailyplan);
+				break;
 			}
-	}
-		
-		catch (WeekException e) {
-			System.out.println("Incorrect Week plan. Put the weekplan that contains p or CH");
-		}
+			else if (answer=='n'||answer=='N') {
+				this.setDailyplan(dailyplan);
+				break;
+			}
+			else {
+}
 		}
 		
 		System.out.print("Month Plan: ");
