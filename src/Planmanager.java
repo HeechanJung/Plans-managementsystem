@@ -1,15 +1,16 @@
+
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import Exception.WeekException;
 
-public class Plannermanagement {
+public class Planmanager {
 	ArrayList<Plannerinput> list= new ArrayList<Plannerinput>();
 	
 	Planner planner;
 	Scanner input;
-	Plannermanagement(Scanner input){
+	Planmanager(Scanner input){
 		this.input=input;
 	}
 	public void addPlans() {
@@ -148,4 +149,12 @@ for(int i=0;i<list.size(); i++) {
 }
 	
 }
+public void setScanner(Scanner input2) {
+	// TODO Auto-generated method stub
+	
+}
+public  int size() {
+	return list.size();
+}
+
 }

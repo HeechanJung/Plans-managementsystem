@@ -4,18 +4,20 @@ import java.util.Scanner;
 
 import log.Eventlogger;
 
-public class Plansmanager {
+public class Menumanager {
 	static Eventlogger logger= new Eventlogger("log.txt");
 
 
 	public static void main(String[] args) {
 		Scanner input= new Scanner(System.in);
-		Plannermanagement plannermanagement=new Plannermanagement(input);
+		Planmanager planmanager=new Planmanager(input);
 		
-		selectMenu(input,plannermanagement);
+		
+		selectMenu(input,planmanager);
 		
 	}
-	public static void selectMenu(Scanner input, Plannermanagement plannermanagement) {
+
+	public static void selectMenu(Scanner input, Planmanager planmanager) {
 		int num=-1;
 		
 		while (num !=5) {
@@ -24,21 +26,21 @@ public class Plansmanager {
 			num=input.nextInt();
 			//input.nextLine();
 			if (num==1) {
-				plannermanagement.addPlans();
+				planmanager.addPlans();
 				logger.log("add plans");
 			}
 			else if (num==2) {
-				plannermanagement.deletePlans();
+				planmanager.deletePlans();
 				logger.log("delete plans");
 
 			}
 			else if (num==3) {
-				plannermanagement.editPlans();
+				planmanager.editPlans();
 				logger.log("edit plans");
 
 				}
 			else if (num==4) {
-				plannermanagement.viewPlans();
+				planmanager.viewPlans();
 				logger.log("view a list of plan");
 
 			}

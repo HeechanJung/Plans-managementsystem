@@ -1,9 +1,14 @@
 package GUI;
+
 import javax.swing.*;
 
-public class PlanAdder extends JFrame {
-	
-	public PlanAdder() {
+public class PlanAdder extends JPanel {
+	WindowFrame frame;
+
+	public PlanAdder(WindowFrame frame) {
+		
+		this.frame=frame;
+
 		JPanel panel=new JPanel();
 		panel.setLayout(new SpringLayout());
 		
@@ -39,9 +44,8 @@ public class PlanAdder extends JFrame {
 	
 		
 		this.setSize(300,300);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		this.setContentPane(panel);
+		this.add(panel);
 		this.setVisible(true);
 	}
 
