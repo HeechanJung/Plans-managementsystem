@@ -2,10 +2,15 @@ package GUI;
 
 import javax.swing.*;
 
+import lilstener.PlanAdderCancelListener;
+import lilstener.PlanAdderListener;
+import manage.Planmanager;
+
 public class PlanAdder extends JPanel {
 	WindowFrame frame;
+	Planmanager planmanager;
 
-	public PlanAdder(WindowFrame frame) {
+	public PlanAdder(WindowFrame frame,Planmanager planmanager) {
 		
 		this.frame=frame;
 
@@ -33,11 +38,18 @@ public class PlanAdder extends JPanel {
 		JLabel labelDaily=new JLabel("Daily: ",JLabel.TRAILING);
 		JTextField fieldDaily = new JTextField(10);
 		labelDaily.setLabelFor(fieldDaily);
+		
+		JButton saveButton =new JButton("save");
+		saveButton.addActionListener(new PlanAdderListener(fieldDaily, fieldDaily, fieldDaily, fieldDaily,planmanager));
+		
+		JButton cancelButton =new JButton("cancel");
+		cancelButton.addActionListener(new PlanAdderCancelListener(frame));
+
 		panel.add(labelDaily);
 		panel.add(fieldDaily);
 		
-		panel.add(new JButton("save"));
-		panel.add(new JButton("cancel"));
+		panel.add(saveButton );
+		panel.add(cancelButton);
 		
 		SpringUtilities.makeCompactGrid(panel, 5, 2, 10, 10, 10, 10);
 		
