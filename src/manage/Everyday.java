@@ -1,6 +1,7 @@
+package manage;
 import java.util.Scanner;
 
-import Exception.WeekException;
+import Exception.WeekException1;
 
 public class Everyday extends Planner implements Plannerinput {
 	public Everyday(PlanKind kind) {
@@ -24,7 +25,7 @@ public class Everyday extends Planner implements Plannerinput {
 		
 		try {
 			this.setWeekplan(weekplan);
-		} catch (WeekException e) {
+		} catch (WeekException1 e) {
 			System.out.println("Incorrect Week plan. Put the weekplan that contains p");
 		}
 		}
