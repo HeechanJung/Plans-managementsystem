@@ -4,19 +4,21 @@ package GUI;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import manage.Planmanager;
+
 import java.awt.*;
 public class WindowFrame extends JFrame {
 	
 	Menuselection menuselection;
 	PlanAdder planadder;
 	PlanViewer planviewer;
-	
-	public WindowFrame() {
+	Planmanager planmanager;
+	public WindowFrame(Planmanager planmanager) {
 		
-		
-		this.menuselection=new Menuselection(this);//WindFrame 자신임을 알림
-		this.planadder=new PlanAdder(this);
-		this.planviewer=new PlanViewer(this);
+		this.planmanager = planmanager;
+		this.menuselection=new Menuselection(this);//WindFrame �옄�떊�엫�쓣 �븣由�
+		this.planadder = new PlanAdder(this, planmanager);
+		this.planviewer=new PlanViewer(this, planmanager);
         
 		
         this.setSize(500, 300);

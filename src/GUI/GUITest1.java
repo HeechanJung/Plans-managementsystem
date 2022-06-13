@@ -1,6 +1,6 @@
 package GUI;
 
-public class GUITest {
+public class GUITest1 {
 
 	public static void main(String[] args) {
 		

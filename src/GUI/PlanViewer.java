@@ -9,73 +9,71 @@ import javax.swing.table.DefaultTableModel;
 import manage.Planmanager;
 import manage.Plannerinput;
 
+
 public class PlanViewer extends JPanel {
-	
+
 	WindowFrame frame;
 	Planmanager planmanager;
-	
+
 	public Planmanager getPlanmanager() {
 		return planmanager;
 	}
 
 	public void setPlanmanager(Planmanager planmanager) {
+		System.out.println("gggggggg : "+planmanager);
 		this.planmanager = planmanager;
 		this.removeAll();
-		
-		DefaultTableModel model=new DefaultTableModel();
+
+		DefaultTableModel model = new DefaultTableModel();
 		model.addColumn("Year");
 		model.addColumn("Month");
 		model.addColumn("Week");
 		model.addColumn("Daily");
-		
-				
-		
-		for(int i=0;i<planmanager.size();i++) {
-			Vector row=new Vector();
-			Plannerinput pi=Plannerinput.get(i);
+
+		for (int i = 0; i < planmanager.size(); i++) {
+			Vector row = new Vector();
+			System.out.println(planmanager.size()+"->aaaaaaa");
+			Plannerinput pi = planmanager.get(i);
 			row.add(pi.getYearplan());
 			row.add(pi.getMonthplan());
 			row.add(pi.getWeekplan());
 			row.add(pi.getDailyplan());
 			model.addRow(row);
-	
+
 		}
-		JTable table=new JTable(model);
-		JScrollPane sp=new JScrollPane(table);
-			
+		JTable table = new JTable(model);
+		JScrollPane sp = new JScrollPane(table);
+
 		this.add(sp);
-		
+
 	}
 
 	public PlanViewer(WindowFrame frame, Planmanager planmanager) {
-		this.frame=frame;
-		this.planmanager= planmanager;
+		this.frame = frame;
+		this.planmanager = planmanager;
 
-		DefaultTableModel model=new DefaultTableModel();
+		System.out.println("gggggggg11 : "+planmanager);
+		DefaultTableModel model = new DefaultTableModel();
 		model.addColumn("Year");
 		model.addColumn("Month");
 		model.addColumn("Week");
 		model.addColumn("Daily");
-		
-				
-		
-		for(int i=0;i<planmanager.size();i++) {
-			Vector row=new Vector();
-			Plannerinput pi=Plannerinput.get(i);
+
+		for (int i = 0; i < planmanager.size(); i++) {
+			Vector row = new Vector();
+			Plannerinput pi = planmanager.get(i);
 			row.add(pi.getYearplan());
 			row.add(pi.getMonthplan());
 			row.add(pi.getWeekplan());
 			row.add(pi.getDailyplan());
 			model.addRow(row);
-	
+
 		}
-		JTable table=new JTable(model);
-		JScrollPane sp=new JScrollPane(table);
-			
+		JTable table = new JTable(model);
+		JScrollPane sp = new JScrollPane(table);
+
 		this.add(sp);
-		
-		
+
 	}
 
-	
 }
