@@ -1,4 +1,5 @@
 package manage;
+
 import java.util.Scanner;
 
 import Exception.WeekException1;
