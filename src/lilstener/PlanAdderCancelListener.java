@@ -14,7 +14,7 @@ public class PlanAdderCancelListener implements ActionListener {
 	WindowFrame frame;
 	
 	public PlanAdderCancelListener(WindowFrame frame) {
-		this.frame=frame;//frame 제어 가능
+		this.frame=frame;//frame 제어가능
 		
 	}
 
@@ -22,6 +22,7 @@ public class PlanAdderCancelListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		JButton b=(JButton)e.getSource();
 		PlanAdder adder= frame.getPlanadder();
+		
 		frame.setupPanel(adder);
 		frame.getContentPane().removeAll();
 		frame.getContentPane().add(frame.getMenuselection());
@@ -30,5 +31,7 @@ public class PlanAdderCancelListener implements ActionListener {
 		
 
 	}
+	
+	
 
 }
